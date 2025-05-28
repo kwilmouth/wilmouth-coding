@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knucklebones</title>
+
+<style type="text/css">
+body {
+	background-color: #4c906e;
+	font-family: arial;
+	color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+	font-size: 44px;
+	text-align: center;
+
+}
+
+h2 {
+	font-size: 33px;
+	text-align: center;
+}
+
+h3 {
+	font-size: 22px;
+	text-align: center;
+}
+
+p {
+	font-size: 16px;
+	text-align: center;
+}
+
+#spacer-20 {
+	height: 20px;
+}
+
+#spacer-60 {
+	height: 60px;
+}
+
+
+
+
+#player1-board, #player2-board  {
+    border: 3px solid #ffffff; 
+    padding: 20px;
+    width: 400px; 
+    margin: 20px auto; 
+}
+
+#player1-grid, #player2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 15px; 
+}
+
+.player-info {
+    display: flex; 
+    justify-content: space-between;  
+    align-items: center;  
+    width: 100%;  
+ 
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: 3px solid black;
+}
+
+#roll-button, #new-game-button  {
+	display: flex;
+    align-items: center;  
+    justify-content: center;  
+    height: 50px;  
+    width: 150px; 
+    background-color: #4c906e;
+    color: #ffffff; 
+    border: 3px solid #ffffff; 
+    border-radius: 6px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+#how-to-play {
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+
+}
+
+#instructions {
+	display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+	max-width: 800px;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: start;
+}
+
+.instructions-column {
+	text-align: left;	
+}
+
+#instructions ul, #instructions li, #instructions p {
+	list-style: none;
+	margin: 0; 
+	padding: 5px 0;
+	padding-left: 0; 
+	text-align: left;
+} 
+
+#instructions p {
+	list-style: none;
+	padding: 11px 0;
+	margin: 0; 
+	padding-left: 0; 
+	text-align: left;
+} 
+
+</style>
+</head>
+
+
+<body>
+
+<h1 style="text-align: center">Knucklebones</h1>
+
+<!-- Player 1 board -->
+<div id="player1-board">
+    <div id="player1-grid">
+        <!-- Grid cells will go here -->
+    </div>
+    <br>
+    
+    <!-- New container to align P1 and Score on the same line -->
+    <div class="player-info">
+        <h3>P1 - Computer</h3> 
+        <h3>Score: XX</h3>
+    </div>
+
+    <h3>Dice Roll: <span id="player1-dice">?</span></h3>
+</div>
+
+
+<!-- spacer -->
+<div id="spacer-20">&nbsp;</div>
+
+<!-- Player 2 board -->
+<div id="player2-board">
+    <div id="player2-grid">
+        <!-- Grid cells will go here -->
+    </div>
+    <br>
+    
+    <!-- New container to align P2 and Score on the same line -->
+    <div class="player-info">
+        <h3>P2 - You</h3> 
+        <h3>Score: XX</h3>
+    </div>
+
+    <h3>Dice Roll: <span id="player2-dice">?</span></h3>
+
+</div>
+
+
+<!-- spacer -->
+<div id="spacer-20">&nbsp;</div>
+
+<!-- button -->
+<button id="roll-button">Roll Dice</button>
+
+<!-- spacer -->
+<div id="spacer-60">&nbsp;</div>
+
+<!-- button -->
+<button id="new-game-button">New Game</button>
+
+<!-- spacer -->
+<div id="spacer-60">&nbsp;</div>
+
+<!-- How to Play -->
+<div id="how-to-play">
+    <h2>How to Play Knucklebones</h2>
+
+    <div id="instructions">
+    <div class="instructions-column">
+    <p><strong>Setup:</strong> </p>
+    <p>Each player has a 3x3 board with three columns.</p>
+
+    <p><strong>Gameplay:</strong></p>
+    <ul>
+        <li>Players take turns rolling a six-sided die.</li>
+        <li>The rolled die is placed in any column on the player's board.</li>
+    </ul>
+
+    <p><strong>Game End & Winner:</strong></p>
+    <ul>
+        <li>The game ends when a player fills their board.</li>
+        <li>The player with the highest score wins.</li>
+    </ul>
+    </div>
+
+    <div class="instructions-column">
+    <p><strong>Scoring:</strong></p>
+    <ul>
+        <li>Each die is worth its face value.</li> 
+        <li>&nbsp;</li>
+        <li>Matching dice in the same column increase the score:</li>
+        <li><strong>Two of the same value:</strong> (sum of dice) × 2</li>
+        <li><strong>Three of the same value:</strong> (sum of dice) × 3</li>
+        <li>&nbsp;</li>
+        <li><em>Example: Two 5s = (5+5) × 2 = 20 points</em></li>
+        <li><em>Example: Three 4s = (4+4+4) × 3 = 36 points</em></li>
+    </ul>
+
+    <p><strong>Opponent Interactions:</strong></p>
+    <ul>
+        <li>Placing a die removes any matching dice from the opponent's corresponding column.</li>
+    </ul>
+    </div>
+</div>
+
+
+
+
+<!-- spacer -->
+<div id="spacer-60">&nbsp;</div>
+
+
+
+
+<!-- Javascript starts -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let playerRoll = null;  
+
+    // PLAYER 1 GRID (COMPUTER)
+    let player1Grid = document.getElementById("player1-grid");
+
+    for (let i = 0; i < 9; i++) { 
+        let cell = document.createElement("div");
+        cell.classList.add("cell");
+        player1Grid.appendChild(cell);
+
+        //  COMPUTER GRID LOCKED. PLAYER CANNOT EDIT COMPUTER GRID.
+    }
+
+    // PLAYER 2 GRID (YOU)
+    let player2Grid = document.getElementById("player2-grid");
+
+    for (let i = 0; i < 9; i++) { 
+        let cell = document.createElement("div");
+        cell.classList.add("cell");
+        player2Grid.appendChild(cell);
+
+        //  CLICKABLE CELLS 
+        cell.addEventListener("click", function() {
+            if (cell.textContent === "" && playerRoll !== null) {  
+                cell.textContent = playerRoll;  // Place the dice number
+                playerRoll = null;  // Reset so they have to roll again
+            }
+        });
+    }
+
+    //  ROLL DICE BUTTON  
+    let rollButton = document.getElementById("roll-button");
+    let player2Dice = document.getElementById("player2-dice");
+
+    rollButton.addEventListener("click", function() {
+        playerRoll = Math.floor(Math.random() * 6) + 1;  // Random number 1-6
+        player2Dice.textContent = playerRoll;  // Show the rolled number
+    });
+
+    //  NEW GAME BUTTON  
+    let newGameButton = document.getElementById("new-game-button");
+
+
+    // ELEMENTS TO RESET
+    let player1Dice = document.getElementById("player1-dice");
+    let player2Dice = document.getElementById("player2-dice");
+    let player1Score = document.getElementById("player1-score");
+    let player2Score = document.getElementById("player2-score");
+
+    newGameButton.addEventListener("click", function() {
+        // Reset dice values
+        player1Dice.textContent = "-";
+        player2Dice.textContent = "-";
+
+        // Reset scores
+        player1Score.textContent = "0";
+        player2Score.textContent = "0";
+
+        // Reset any game state variables if necessary
+        console.log("Game reset!");
+});
+
+
+
+
+</script>
+<!-- Javascript ends -->
+
+</body>
+</html>
