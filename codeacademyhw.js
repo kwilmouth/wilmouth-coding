@@ -1,11 +1,11 @@
-Console
+//🔸 Console
 // console keyword refers to an object, a collection of data and actions, that we can use in our code. 
 console.log(25); 
 
 
-Comments
+//🔸 Comments
 
-Data Types
+//🔸 Data Types
 // Number: Any number, including numbers with decimals: 4, 8, 1516, 23.42.
 // String: Any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) surrounded by single quotes: ' ... ' or double quotes " ... ", though we prefer single quotes. Some people like to think of string as a fancy word for text.
 console.log('It was love at first sight.');
@@ -17,7 +17,7 @@ console.log('It was love at first sight.');
 // Object: Collections of related data.
 
 
-Arithmetic Operators
+//🔸 Arithmetic Operators
 // operator: a character that performs a task in our code. JavaScript has several built-in arithmetic operators, that allow us to perform mathematical calculations on numbers. These include the following operators and their corresponding symbols:
 
 // Add: +
@@ -32,23 +32,23 @@ console.log(65 / 240)
 console.log(12 % 3);
 
 
-String Concatenation
+//🔸 String Concatenation
 console.log('hi' + 'ya'); // Prints 'hiya'
 console.log('middle' + ' ' + 'space'); // Prints 'middle space'
 
-Properties
+//🔸 Properties
 // length: stores the number of characters in that string
 console.log('Hello'.length); // Prints 5
 
 
-Methods
+//🔸 Methods
 console.log('hello'.toUpperCase()); // Prints 'HELLO'
 console.log('Hey'.startsWith('H')); // Prints true
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
 
-Built-in Objects
+//🔸 Built-in Objects
 console.log(Math.random()); // Prints a random number between 0 and 1
 console.log(Math.floor(Math.random() * 50)); // Prints a random whole number between 0 and 50
 console.log(Number.isInteger(2017)); // Prints true
@@ -56,16 +56,16 @@ console.log(Number.isInteger(2017)); // Prints true
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 
 
-Review
+//🔸 Review
 // https://www.codecademy.com/resources/docs/javascript
 // https://www.codecademy.com/workspaces/new
 
 
-Variables
+//🔸 Variables
 // variable: a container for a value; a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves.
 
 
-Create a Variable: var
+//🔸 Create a Variable: var
 
 var myName = 'Arya';
 console.log(myName);
@@ -80,11 +80,28 @@ console.log(myName);
 // After the variable is declared, the string value 'Arya' is printed to the console by referencing the variable name: console.log(myName).
 
 
+//🔸 Create a Variable: let
+
+//let: signals that the variable can be reassigned a different value. 
+
+let meal = 'Enchiladas';
+console.log(meal); // Output: Enchiladas
+meal = 'Burrito';
+console.log(meal); // Output: Burrito
 
 
+let price;
+console.log(price); // Output: undefined
+price = 350;
+console.log(price); // Output: 350
 
 
+//🔸 Create a Variable: const
+
+// const: is short for the word constant; you can store any value in a const variable
+
+const myName = 'Gilberto';
+console.log(myName); // Output: Gilberto
 
 
-
-
+//🔸 Mathematical Assignment Operators
