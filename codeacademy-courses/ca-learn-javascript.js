@@ -1196,6 +1196,214 @@ console.log(secretMessage.join(' '));
 
 //🔸 Loops
 
+//🔸 Repeating Tasks Manually
+
+//exercise
+const vacationSpots = ['place 1', 'place 2', 'place 3'];
+
+console.log(vacationSpots[0]);
+console.log(vacationSpots[1]);
+console.log(vacationSpots[2]);
+
+//exercise 2
+const vacationSpots = ['place 1', 'place 2', 'place 3'];
+
+for (let i = 0; i < vacationSpots.length; i++) {
+  console.log(vacationSpots[i]);
+}
+
+
+//🔸 The For Loop
+
+//example
+for (let counter = 0; counter < 4; counter++) {
+  console.log(counter);
+}
+
+// The initialization is let counter = 0, so the loop will start counting at 0.
+// The stopping condition is counter < 4, meaning the loop will run as long as the iterator variable, counter, is less than 4.
+// The iteration statement is counter++. This means after each loop, the value of counter will increase by 1. For the first iteration, counter will equal 0. For the second iteration, it will equal 1, and so on.
+// The code block within the curly braces, console.log(counter), will continue to execute until the condition evaluates to false. The condition will be false when counter is greater than or equal to 4 — the point that the condition becomes false is sometimes called the stop condition.
+
+//exercise
+for (let counter = 5; counter < 11; counter++) {
+  console.log(counter);
+}
+
+
+//🔸 Looping in Reverse
+
+//example
+for (let counter = 0; counter < 4; counter++){
+  console.log(counter);
+}
+
+//exercise
+for (let counter = 3; counter >= 0; counter -= 1) {
+  console.log(counter);
+}
+
+
+//🔸 Looping through Arrays
+
+//example
+const animals = ['Grizzly Bear', 'Sloth', 'Sea Lion'];
+for (let i = 0; i < animals.length; i++){
+  console.log(animals[i]);
+}
+
+//exercise
+const vacationSpots = ['Bali', 'Paris', 'Tulum'];
+
+for (let i = 0; i < vacationSpots.length; i++){
+  console.log('I would love to visit ' + vacationSpots[i]);
+}
+
+
+//🔸 Nested Loops
+
+//example
+const arrayA = [6, 19, 20];
+const arrayB = [19, 81, 2];
+for (let i = 0; i < arrayA.length; i++) {
+  for (let j = 0; j < arrayB.length; j++) {
+    if (arrayA[i] === arrayB[j]) {
+      console.log('Both arrays have the number: ' + arrayB[j]);
+    }
+  }
+}
+
+//exercise
+const bobsFollowers = ['timmy','oliver','clove','gertrude'];
+const tinasFollowers = ['timmy','clove','fern',];
+const mutualFollowers = [];
+// bobsFollowers has 4 names.
+// tinasFollowers has 3 names.
+// mutualFollowers is empty for now — it will store the overlapping names.
+
+for (let i = 0; i < bobsFollowers.length; i++) {
+  // This loop runs once for each person in Bob’s follower list.
+  // i will go from 0 to 3, referring to:
+  // bobsFollowers[0] → 'timmy'
+  // bobsFollowers[1] → 'oliver'
+  // bobsFollowers[2] → 'clove'
+  // bobsFollowers[3] → 'gertrude'
+
+  for (let j = 0; j < tinasFollowers.length; j++) {
+    // For each person in Bob’s list, this loop checks everyone in Tina’s list.
+    // j goes from 0 to 2:
+    // tinasFollowers[0] → 'timmy'
+    // tinasFollowers[1] → 'clove'
+    // tinasFollowers[2] → 'fern'
+
+    if (bobsFollowers[i] === tinasFollowers[j]) {
+      // This compares one name from Bob’s list to one name from Tina’s list.
+      // If they are equal, then:
+      // The name is a mutual follower.
+     
+      console.log('Mutual follower found: ' + bobsFollowers[i]); 
+      mutualFollowers.push(bobsFollowers[i]);
+      // This prints the name to the console, e.g., “Mutual follower found: timmy”
+      // Then it adds that name to the mutualFollowers array.
+    }
+  }
+}
+
+
+//🔸 The While Loop
+
+//example
+  // A for loop that prints 1, 2, and 3
+  for (let counterOne = 1; counterOne < 4; counterOne++){
+    console.log(counterOne);
+  }
+
+  // A while loop that prints 1, 2, and 3
+  let counterTwo = 1;
+  while (counterTwo < 4) {
+    console.log(counterTwo);
+    counterTwo++;
+  }
+
+//exercise
+const cards = ['diamond', 'spade', 'heart', 'club'];
+let currentCard = [];
+
+while (currentCard !== 'spade') {
+  //!== means does not equal
+  currentCard = cards[Math.floor(Math.random() * 4)];
+  console.log(currentCard);
+}
+
+
+//🔸 Do...While Statements
+
+//example
+let countString = '';
+let i = 0;
+
+do {
+  countString = countString + i;
+  i++;
+} while (i < 5);
+
+console.log(countString);
+
+
+//example 2
+const firstMessage = 'I will print!';
+const secondMessage = 'I will not print!'; 
+
+// A do while with a stopping condition that evaluates to false
+do {
+ console.log(firstMessage)
+} while (true === false);
+
+// A while loop with a stopping condition that evaluates to false
+while (true === false){
+  console.log(secondMessage)
+};
+
+//exercise
+
+const cupsOfSugarNeeded = 8;
+let cupsAdded = 0;
+
+do {
+  cupsAdded++;
+  console.log(cupsAdded);
+} while (cupsAdded < cupsOfSugarNeeded);
+
+
+//🔸 The break Keyword
+
+//example
+for (let i = 0; i < 99; i++) {
+  if (i > 2 ) {
+     break;
+  }
+  console.log('Banana.');
+}
+
+console.log('Orange you glad I broke out the loop!');
+
+//exercise
+const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+
+for (let i = 0; i < rapperArray.length; i++) {
+  if (rapperArray[i] === 'Notorious B.I.G.') {
+    console.log(rapperArray[i]);
+     break;
+  }
+  else {console.log(rapperArray[i] + "And if you don't know, now you know.");}
+}
+
+
+
+
+
+
+
 
 
 ////////// 🔺 
