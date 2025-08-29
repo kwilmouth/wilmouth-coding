@@ -1399,6 +1399,61 @@ for (let i = 0; i < rapperArray.length; i++) {
 }
 
 
+//🔸 Review
+
+
+//🔸 Learn JavaScript - Whale Talk
+
+const input = 'turpentine and turtles';
+// This is the input string we want to convert into "whale talk"
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+// This array holds the vowels we're interested in
+const resultArray = [];
+// This array will store the vowels we find in the input string
+
+for (let i = 0; i < input.length; i++) {
+// Loop through each character in the input string
+  for (let j = 0; j < vowels.length; j++) {
+  // For each character, loop through all vowels
+    if (input[i] === vowels[j]) {
+    // If the current character matches a vowel
+      resultArray.push(input[i]);
+      // Add the vowel to the result array
+
+    if (input[i] === 'e' || input[i] === 'u') {
+    // If the vowel is 'e' or 'u', add it again to double it
+       resultArray.push(input[i]);
+    }
+    }
+  }
+}
+
+const resultString = resultArray.join('').toUpperCase();
+// Join all the characters in resultArray into a string and make it uppercase
+
+console.log(resultString); 
+// Print the final whale talk string
+
+
+////////// 🔺 Higher-Order Functions
+
+//🔸 Introduction
+
+//example
+for (let i = 1; i <= 3; i++) {
+  console.log(i);
+}
+
+
+//🔸 Functions as Data
+
+
+
+
+
+
+
+
 
 
 
