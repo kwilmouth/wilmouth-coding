@@ -1447,6 +1447,151 @@ for (let i = 1; i <= 3; i++) {
 
 //🔸 Functions as Data
 
+//example
+const announceThatIAmDoingImportantWork = () => {
+  console.log("I’m doing very important work!");
+};
+
+//example
+const busy = announceThatIAmDoingImportantWork;
+
+busy(); // This function call barely takes any space!
+
+
+//exercise
+const checkThatTwoPlusTwoEqualsFourAMillionTimes = () => {
+  for(let i = 1; i <= 1000000; i++) {
+    if ( (2 + 2) != 4) {
+      console.log('Something has gone very wrong :( ');
+    }
+  }
+};
+
+const isTwoPlusTwo = checkThatTwoPlusTwoEqualsFourAMillionTimes;
+
+isTwoPlusTwo() 
+
+console.log(isTwoPlusTwo.name);
+//functionName.name - in this case helps us find the original name of the function. isTwoPlusTwo.name = checkThatTwoPlusTwoEqualsFourAMillionTimes
+
+
+//🔸 Functions as Parameters
+
+//example
+const higherOrderFunc = param => {
+  param();
+  return `I just invoked ${param.name} as a callback function!`
+}
+ 
+const anotherFunc = () => {
+  return 'I\'m being invoked by the higher-order function!';
+}
+
+higherOrderFunc(anotherFunc);
+
+//example
+higherOrderFunc(() => {
+  for (let i = 0; i <= 10; i++){
+    console.log(i);
+  }
+});
+
+
+//exercise
+const addTwo = num => {
+  return num + 2;
+}
+
+const checkConsistentOutput = (func, val) => {
+  const checkA = val +2;
+  const checkB = func(val);
+  if (checkA === checkB) {
+    return checkB; 
+  }
+  else {
+    return 'inconsistent results';
+  }
+}
+
+console.log(checkConsistentOutput(addTwo, 4));
+
+
+//🔸 Review
+
+
+////////// 🔺 Iterators
+
+//🔸 Introduction to Iterators
+
+// Iterators are methods called on arrays to manipulate elements and return values.
+
+
+//🔸 Introduction to Iterators
+
+// .forEach() will execute the same code for each element of an array.
+
+//example
+groceries.forEach(groceryItem => console.log(groceryItem));
+
+//example
+function printGrocery(element){
+  console.log(element);
+}
+groceries.forEach(printGrocery);
+
+//exercise
+const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+
+
+fruits.forEach('I want to eat a' + fruits);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
