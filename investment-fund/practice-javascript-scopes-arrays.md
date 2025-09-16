@@ -23,6 +23,17 @@ outer();
 console.log(name);
 ```
 
+⭕️ Answer:
+<!-- 
+Inner
+Outer
+Global
+
+The variables are stored Global, Outer, Inner, so when called it will be removed Last In Last Out.
+This LILO would be Inner, Outer, Global. 
+-->
+
+
 Predict what gets logged, and explain why.
 
 Once you have your prediction, test it by running the snippet!
@@ -44,6 +55,22 @@ function createCounter() {
 
 createCounter();
 ```
+
+⭕️ Answer:
+<!-- 
+function createCounter() {
+    for (let i = 0; i < 3; i++) {
+        setTimeout(function() {
+            console.log("Counter: " + i);
+        }, 100);
+    }
+}
+
+createCounter();
+
+the var kept the the value at 3 and printed 3, 3, 3.
+changing var to let calculated per loop. the new answer would be 0, 1, 2
+-->
 
 Next, fix the `createCounter` function so that it prints out 0, 1, 2 as intended.
 
@@ -77,6 +104,17 @@ console.log("F:", score);
 Predict what gets logged, and explain why.
 
 Once you have your prediction, test it by running the snippet!
+
+⭕️ Answer:
+<!-- 
+**this isn't correct. ask jacob to explain
+A: 100 
+B: 50 
+C: 25 
+D: 25 
+E: 25 
+F: 25
+-->
 
 ### Exercise 4: Function Parameter Shadowing
 
