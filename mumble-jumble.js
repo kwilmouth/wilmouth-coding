@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const hintText = document.getElementById('hint-text');
 
     if (hintText.style.visibility === 'hidden') {
-      hintText.textContent = `Hint: ${currentCard.hint}`;
+      hintText.textContent = `${currentCard.hint}`;
       hintText.style.visibility = 'visible';
       showHideHint.textContent = 'Hide Hint';
     } else {
