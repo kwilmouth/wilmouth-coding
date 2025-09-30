@@ -1,56 +1,81 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const lastQuestionButton = document.getElementById('last-question');
-  const nextQuestionButton = document.getElementById('next-question');
-  const number = document.getElementById('number');
-  const question = document.getElementById('question');
+const cards = [
+  { number: "\\d+", question: "What is a weird hobby you want to take up but haven't started yet?" },
+  { number: "\\d+", question: "If you could live in any fictional world, which one would it be? (e.g., Harry Potter, Lord of the Rings, Star Wars.)" },
+  { number: "\\d+", question: "Would you rather be able to talk to animals but have to go vegan, or be able to play any instrument but only communicate through song?" },
+  { number: "\\d+", question: "Would you rather predict tragedies one day in advance or see fortunate events further in the future, but only with a 50% success rate?" },
+  { number: "\\d+", question: "What advice would you give your younger self?" },
+  { number: "\\d+", question: "Do you have a song you confidently know all the lyrics to?" },
+  { number: "\\d+", question: "You wake up in a Groundhog Day situation where you repeat the same day for a week. What would you do differently?" },
+  { number: "\\d+", question: "How many blueberries do you think we could collectively stuff up our noses?" },
+  { number: "\\d+", question: "You wake up naked in the airport, and it opens in 30 minutes. What do you do?" },
+  { number: "\\d+", question: "You're unknowingly signed up for a talent show. What's your act?" },
+  { number: "\\d+", question: "If you had to eat the whole menu of one restaurant in one week, which restaurant would it be?" },
+  { number: "\\d+", question: "If your belly button could dispense any condiment, which one would it be?" },
+  { number: "\\d+", question: "What superpower would your pet have?" },
+  { number: "\\d+", question: "If one kitchen appliance could come to life, which one would it be?" },
+  { number: "\\d+", question: "How would Steve Irwin describe you if he found you in the wilderness?" },
+  { number: "\\d+", question: "If someone robbed you, what would they take first? What would upset you most to lose?" },
+  { number: "\\d+", question: "What did your family do for your birthday when you were growing up?" },
+  { number: "\\d+", question: "What sea creature would make the best spacecraft?" },
+  { number: "\\d+", question: "Which state would make the least functional cutting board?" },
+  { number: "\\d+", question: "You're in a superhero team. Who makes up the rest of your crime-fighting squad? (5 teammates total.)" },
+  { number: "\\d+", question: "What would someone need to know if they were borrowing your body for a week?" },
+  { number: "\\d+", question: "What job would you have if every occupation paid the same salary?" },
+  { number: "\\d+", question: "What is your mundane superpower?" },
+  { number: "\\d+", question: "If aliens visited us, where would you take them to eat?" },
+  { number: "\\d+", question: "A zombie apocalypse breaks out. Which department store/restaurant chain building do you make into your new shelter?" },
+  { number: "\\d+", question: "If all technology ceased to exist, what would your new occupation be?" },
+  { number: "\\d+", question: "If you could invent a Ben & Jerry's flavor, what would it be called, and what would it have in it?" },
+  { number: "\\d+", question: "If your current partner had to fight all your exes Scott Pilgrim style, would they make it?" },
+  { number: "\\d+", question: "What do you think is the right way to cook a steak?" },
+  { number: "\\d+", question: "What is an occupation that you know enough about to fake it till you make it?" },
+  { number: "\\d+", question: "If someone were to break into your house, what's the closest thing you can grab that can be used as a weapon?" },
+  { number: "\\d+", question: "You stumble upon an ancient civilization that thinks you're a deity. What would be your first decree?" },
+  { number: "\\d+", question: "If you could take credit for a great historical invention, what would it be and why? (e.g., printing press, railroad, telephone.)" },
+  { number: "\\d+", question: "How did your family do holiday figures (Santa, Easter Bunny, Tooth Fairy) when you were growing up?" },
+  { number: "\\d+", question: "When it comes to entering a pool, do you tiptoe in or do you cannonball in?" },
+  { number: "\\d+", question: "What is your default movie suggestion?" },
+  { number: "\\d+", question: "Contrary to popular opinion, which movie couple do you think were NOT a good match?" },
+  { number: "\\d+", question: "If you could do something dangerous with no risk, what would it be?" },
+  { number: "\\d+", question: "You have 24 hours and an unlimited budget to throw your dream birthday. What would you do?" },
+  { number: "\\d+", question: "If you were to pit all the US state birds against each other in a battle royale, which state bird would be victorious?" },
+  { number: "\\d+", question: "Is cereal a soup?" },
+  { number: "\\d+", question: "What is your level of marshmallow doneness?" },
+  { number: "\\d+", question: "You're ordering a pizza and can add two toppings. What toppings do you add?" },
+  { number: "\\d+", question: "If you could be an animal whisperer for one animal, which one would it be?" },
+  { number: "\\d+", question: "What is an event in your life that could be your superhero trigger moment? Have the person/people next to you determine what your superhero would be based on your trigger." },
+  { number: "\\d+", question: "If the Olympics replaced their tennis ball people with ball dogs, which countries would have which dogs?" },
+  { number: "\\d+", question: "What would your walkie-talkie code name be?" },
+  { number: "\\d+", question: "Cybernetic accessories are now available. What body modification would you get?" },
+  { number: "\\d+", question: "If you could have a lifetime supply of one specific food, what would it be? (You can't say “sandwich,” but you could say “peanut butter and jelly sandwich.”)" },
+  { number: "\\d+", question: "You win a “no-cart” shopping spree. Everything you can hold onto without dropping is yours for free. Which shop do you go to?" },
+  { number: "\\d+", question: "Which animal not usually sold in grocery stores do you think would taste really good?" },
+  { number: "\\d+", question: "Fight a chicken randomly once a day, OR fight a chimp with a sword randomly once a month?" },
+  { number: "\\d+", question: "If you had to eat one Pokémon, which one would it be?" },
+  { number: "\\d+", question: "You're on a date with a pirate. Would you rather they have a hook for a hand or a peg leg?" },
+  { number: "\\d+", question: "You're an animal at an animal shelter. What's your shelter description?" },
+  { number: "\\d+", question: "What is an item you refuse to buy used?" },
+  { number: "\\d+", question: "You're entered into an eating competition but you get to choose the food. What are you choosing?" },
+  { number: "\\d+", question: "What would be your last meal before you die?" },
+  { number: "\\d+", question: "If you had to challenge other suitors to a dance-off to win your spouse's affections (bird mating style), would you win?" },
+  { number: "\\d+", question: "If you could turn any activity into an Olympic sport, what would you win a medal for?" },
+  { number: "\\d+", question: "Which restaurant would you be the saddest to accidentally leave your leftovers at?" },
+  { number: "\\d+", question: "If you were a car air freshener, what would your scent be?" },
+  { number: "\\d+", question: "If a board game from your collection came to life Jumanji-style, which one would you choose to play?" },
+  { number: "\\d+", question: "When it comes to your personalities in the relationship, who's Bert and who's Ernie?" },
+  { number: "\\d+", question: "How long would it take you to figure out if you were living in a simulation?" },
+  { number: "\\d+", question: "What one question would you ask to learn and rank the different intelligence levels of a room of people?" },
+  { number: "\\d+", question: "What is a true \"American\" film that you'd suggest someone watch before they visit America for the first time?" },
+  { number: "\\d+", question: "If you were a dragon, what three modern-day treasures would you keep in your hoard?" },
+  { number: "\\d+", question: "What is an animal you wish you could \"pspspsps\" but should definitely not \"pspspsps\"?" },
+  { number: "\\d+", question: "If you had to pitch your partner like a used car salesperson trying to close a deal, how would you describe them?" },
+  { number: "\\d+", question: "Forget 'milk and honey'—what biblical scent would make the worst candle?" }
+];
 
-  let history = [];
-  let historyIndex = -1;
-  let currentCard = null;
 
+const renumberedCards = cards.map((card, index) => ({
+  ...card,
+  number: (index + 1).toString()
+}));
 
-  function startNewRound() {
-    const randomIndex = Math.floor(Math.random() * cards.length);
-    currentCard = cards[randomIndex];
-
-    number.textContent = "#" + currentCard.number;
-    question.textContent = currentCard.question;
-  }
-
-  // Start game
-  startNewRound();
-
-
-  // Start game
-  function startNewRound() {
-    const randomIndex = Math.floor(Math.random() * cards.length);
-    currentCard = cards[randomIndex];
-  
-    // Push new index and update historyIndex
-    history.push(randomIndex);
-    historyIndex = history.length - 1;
-  
-    number.textContent = "Question #" + currentCard.number;
-    question.textContent = currentCard.question;
-  }
-
-  // Previous question
-  lastQuestionButton.addEventListener('click', function (e) {
-    e.preventDefault();
-  
-    if (historyIndex > 0) {
-      historyIndex--;
-      const previousIndex = history[historyIndex];
-      currentCard = cards[previousIndex];
-  
-      number.textContent = "Question #" + currentCard.number;
-      question.textContent = currentCard.question;
-    }
-  });
-  
-  // Next question
-  nextQuestionButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    startNewRound();
-  });
-});
+console.log(renumberedCards);

@@ -1,135 +1,56 @@
-const cards = [
-  { number: "1", question: "If you could ride any barnyard animal into battle besides a horse, which one would it be and why?" },
-  { number: "2", question: "Your dinosaur is going to a formal event. What is its accessory of choice?" },
-  { number: "3", question: "What color would your teacup pig's hat be?" },
-  { number: "4", question: "You committed a crime that landed you in the history books. What did you do and how did you get away with it?" },
-  { number: "5", question: "Would your giraffe's necktie be tied at the top of its neck or the bottom?" },
-  { number: "6", question: "You have a high-powered assault turtle. What is its weapon of choice?" },
-  { number: "7", question: "All books are being burned. You can only save books or articles that start with each letter of the alphabet. You reach the letter D and must choose between saving the dictionary or the Declaration of Independence. Which one do you pick? Why?" },
-  { number: "8", question: "If you were in a room full of people that are your name twins, what would make you the superior [insert name here]?" },
-  { number: "9", question: "You meet your clone that is You 2.0. What would be different and what would be the same?" },
-  { number: "10", question: "You enter a completely empty plane. Which seat do you sit in, and why?" },
-  { number: "11", question: "You meet someone who can see a year into the future. Do you ask about success, love, or health? Why did you choose what you chose?" },
-  { number: "12", question: "If you could go back in time and parent yourself, what would you do differently?" },
-  { number: "13", question: "You meet someone new. After introductions and small talk, you separate and go about your day. How would you like your new friend to describe their first impression of you?" },
-  { number: "14", question: "If you wrote a letter to every person you've had a serious crush on, how many letters would you write?" },
-  { number: "15", question: "Imagine a world where everyone has a number above their head. This number is a countdown to something significant. Would you want to know your number? What do you hope it is counting down to?" },
-  { number: "16", question: "Think of the person who knows you best. You and an imposter are behind two doors. What one question could they ask to know it's you?" },
-  { number: "17", question: "If Heaven had a daily subscription fee, what have you done today to pay for it?" },
-  { number: "18", question: "You meet an all-knowing duck at a park. He grants you one question. What do you ask?" },
-  { number: "19", question: "“Imagine that lightning strikes and you're the president. Do you know enough honest people to make a government?” — Humans of New York" },
-  { number: "20", question: "Would you date the male/female version of yourself?" },
-  { number: "21", question: "What is your go-to comfort food after a long day? Homemade version and takeout version." },
-  { number: "22", question: "What is a weird hobby you want to take up but haven't started yet?" },
-  { number: "23", question: "If you could live in any fictional world, which one would it be? (e.g., Harry Potter, Lord of the Rings, Star Wars.)" },
-  { number: "24", question: "Would you rather be able to talk to animals but have to go vegan, or be able to play any instrument but only communicate through song?" },
-  { number: "25", question: "Would you rather predict tragedies one day in advance or see fortunate events further in the future, but only with a 50% success rate?" },
-  { number: "26", question: "What advice would you give your younger self?" },
-  { number: "27", question: "Do you have a song you confidently know all the lyrics to?" },
-  { number: "28", question: "You wake up in a Groundhog Day situation where you repeat the same day for a week. What would you do differently?" },
-  { number: "29", question: "What song is your anthem right now?" },
-  { number: "30", question: "You can edit your biological makeup. What ethnicities would you choose to reinvent yourself? (Max of 3.)" },
-  { number: "31", question: "How many blueberries do you think we could collectively stuff up our noses?" },
-  { number: "32", question: "You get amnesia and only remember your first name. Who do you trust to help you remember who you are?" },
-  { number: "33", question: "If you had to date a Disney princess/prince, who would you choose? (Answer for both genders.)" },
-  { number: "34", question: "If you could design your own currency, what would it look like? Would the coins still be round?" },
-  { number: "35", question: "Would you trust your parents to pick your partner in an arranged marriage?" },
-  { number: "36", question: "You get three requirements for your parents' choice of your spouse. What are they?" },
-  { number: "37", question: "You wake up naked in the airport, and it opens in 30 minutes. What do you do?" },
-  { number: "38", question: "You're unknowingly signed up for a talent show. What's your act?" },
-  { number: "39", question: "When it comes to bunk beds, are you a top-bunk or bottom-bunk person?" },
-  { number: "40", question: "Favorite form of potatoes? (e.g., mashed, fries, tots, stewed, boiled, baked, etc.)" },
-  { number: "41", question: "Imagine all your friends are genderswapped. Who would you date from your friend group?" },
-  { number: "42", question: "If you had to eat the whole menu of one restaurant in one week, which restaurant would it be?" },
-  { number: "43", question: "If your belly button could dispense any condiment, which one would it be?" },
-  { number: "44", question: "If you had wings, how would you put your shirt on? Design a shirt for someone with wings." },
-  { number: "45", question: "Draw a bike without a reference picture. Look at your picture. Would it work?" },
-  { number: "46", question: "What superpower would your pet have?" },
-  { number: "47", question: "If one kitchen appliance could come to life, which one would it be?" },
-  { number: "48", question: "How would Steve Irwin describe you if he found you in the wilderness?" },
-  { number: "49", question: "What qualifications would the leaders of your army need? Name three." },
-  { number: "50", question: "If someone robbed you, what would they take first? What would upset you most to lose?" },
-  { number: "51", question: "What did your family do for your birthday when you were growing up?" },
-  { number: "52", question: "If you were to die tomorrow, what would be your biggest regret?" },
-  { number: "53", question: "Describe your ideal roommate." },
-  { number: "54", question: "What sea creature would make the best spacecraft?" },
-  { number: "55", question: "Which state would make the least functional cutting board?" },
-  { number: "56", question: "You're in a superhero team. Who makes up the rest of your crime-fighting squad? (5 teammates total.)" },
-  { number: "57", question: "If you were to write your own eulogy, how would it go?" },
-  { number: "58", question: "What would your name sound like if you were a Pokémon?" },
-  { number: "59", question: "What would someone need to know if they were borrowing your body for a week?" },
-  { number: "60", question: "What job would you have if every occupation paid the same salary?" },
-  { number: "61", question: "What is your mundane superpower?" },
-  { number: "62", question: "What's your favorite dinosaur?" },
-  { number: "63", question: "Who do you think should have really won in Charlie and the Chocolate Factory: Violet, Augustus, Veruca, or Mike?" },
-  { number: "64", question: "What is a job that you think will disappear in the next 50 years?" },
-  { number: "65", question: "What color describes you?" },
-  { number: "66", question: "What cereal reminds you of your childhood?" },
-  { number: "67", question: "How do you take your coffee?" },
-  { number: "68", question: "If aliens visited us, what would you take them to eat?" },
-  { number: "69", question: "A zombie apocalypse breaks out. Which department store/restaurant chain building do you make into your new shelter?" },
-  { number: "70", question: "If all technology ceased to exist, what would your new occupation be?" },
-  { number: "71", question: "If you could invent a Ben & Jerry's flavor, what would it be called, and what would it have in it?" },
-  { number: "72", question: "If your current partner had to fight all your exes Scott Pilgrim style, would they make it?" },
-  { number: "73", question: "What do you think is the right way to cook a steak?" },
-  { number: "74", question: "What is an occupation that you know enough about to fake it till you make it?" },
-  { number: "75", question: "Which pop culture celebrity would make the best presidential candidate? (Artists like Beyoncé, not historical figures like Gandhi.)" },
-  { number: "76", question: "If someone were to break into your house, what's the closest thing you can grab that can be used as a weapon?" },
-  { number: "77", question: "You stumble upon an ancient civilization that thinks you're a deity. What kind of deity would you be?" },
-  { number: "78", question: "What would you do if you lost everything and had to start over from scratch?" },
-  { number: "79", question: "You have one year to make $1 million. If you succeed, it's doubled. If you fail, you lose it all. What do you do?" },
-  { number: "80", question: "If you were put in a room full of strangers, what is something you could proudly say that you were the best at in the room?" },
-  { number: "81", question: "What are your/your family's Monopoly house rules?" },
-  { number: "82", question: "Describe your taste in music in three words." },
-  { number: "83", question: "What makes you angry?" },
-  { number: "84", question: "If you could take credit for a great historical invention, what would it be and why? (e.g., printing press, railroad, telephone.)" },
-  { number: "85", question: "How did your family do holiday figures (Santa, Easter Bunny, Tooth Fairy) when you were growing up?" },
-  { number: "86", question: "When it comes to entering a pool, do you tiptoe in or do you cannonball in?" },
-  { number: "87", question: "What is your default movie suggestion?" },
-  { number: "88", question: "Contrary to popular opinion, which movie couple do you think were NOT a good match?" },
-  { number: "89", question: "Which one of Snow White's seven dwarves best describes your significant other/best friend? (Happy, Doc, Grumpy, Dopey, Bashful, Sleepy, and Sneezy.)" },
-  { number: "90", question: "If you could do something dangerous with no risk, what would it be?" },
-  { number: "91", question: "You have 24 hours and an unlimited budget to throw your dream birthday. What would you do?" },
-  { number: "92", question: "When was the last time you cried? What made you cry?" },
-  { number: "93", question: "If you were to pit all the US state birds against each other in a battle royale, which state bird would be victorious?" },
-  { number: "94", question: "What is your go-to dance move at parties?" },
-  { number: "95", question: "What was your worst subject in school?" },
-  { number: "96", question: "Your friends start a game of Monopoly. Which game piece are you choosing? (Battleship, boot, cannon, horse and rider, iron, racecar, dog, thimble, top hat, or wheelbarrow?)" },
-  { number: "97", question: "Is cereal a soup?" },
-  { number: "98", question: "What is your level of marshmallow doneness?" },
-  { number: "99", question: "You're ordering a pizza and can add two toppings. What toppings do you add?" },
-  { number: "100", question: "If you could be an animal whisperer for one animal, which one would it be?" },
-  { number: "101", question: "What is an event in your life that could be your superhero trigger moment? Have the person/people next to you determine what your superhero would be based on your trigger." },
-  { number: "102", question: "If the Olympics replaced their tennis ball people with ball dogs, which countries would have which dogs?" },
-  { number: "103", question: "What would your walkie-talkie code name be?" },
-  { number: "104", question: "Cybernetic accessories are now available. What body modification would you get?" },
-  { number: "105", question: "If you could have a lifetime supply of one specific food, what would it be? (You can't say “sandwich,” but you could say “peanut butter and jelly sandwich.”)" },
-  { number: "106", question: "You win a “no-cart” shopping spree. Everything you can hold onto without dropping is yours for free. Which shop do you go to?" },
-  { number: "107", question: "Which animal not usually sold in grocery stores do you think would taste really good?" },
-  { number: "108", question: "Marry the love of your life, but you and your bride/groom have to be nude for the ceremony in front of friends and family, OR have your bride/groom stand you up at the altar?" },
-  { number: "109", question: "Fight a chicken randomly once a day, OR fight a chimp with a sword randomly once a month?" },
-  { number: "110", question: "If you had to eat one Pokémon, which one would it be?" },
-  { number: "111", question: "You're on a date with a pirate. Would you rather they have a hook for a hand or a peg leg?" },
-  { number: "112", question: "You're an animal at an animal shelter. What's your shelter description?" },
-  { number: "113", question: "What is an item you refuse to buy used?" },
-  { number: "114", question: "You're entered into an eating competition but you get to choose the food. What are you choosing?" },
-  { number: "115", question: "What would be your last meal before you die?" },
-  { number: "116", question: "If you had to choose one basic ramen noodle seasoning packet to be sprinkled in your cremated ashes, which one would it be?" },
-  { number: "117", question: "If you challenged another male to a dance-off to win my affections (bird mating style), would you win?" },
-  { number: "118", question: "What would be the worst situation to poop your pants?" },
-  { number: "119", question: "What's the least amount of money someone would have to pay you to pee your pants in public?" },
-  { number: "120", question: "You are given $2 million to hide a paperclip from a detective. He has seven days to find it. What do you do?" },
-  { number: "121", question: "If you could turn any activity into an Olympic sport, what would you win a medal for?" },
-  { number: "122", question: "Which restaurant would you be the saddest to accidentally leave your leftovers at?" },
-  { number: "123", question: "If you were a car air freshener, what would your scent be?" },
-  { number: "124", question: "If a board game from your collection came to life Jumanji-style, which one would you choose to play?" },
-  { number: "125", question: "When it comes to your personalities in the relationship, who's Bert and who's Ernie?" },
-  { number: "126", question: "How long would it take you to figure out if you were living in a simulation?" },
-  { number: "127", question: "What one question would you ask to learn and rank the different intelligence levels of a room of people?" },
-  { number: "128", question: "What is a true \"American\" film that you'd suggest someone watch before they visit America for the first time?" },
-  { number: "129", question: "If you were a dragon, what three modern-day treasures would you keep in your hoard?" },
-  { number: "130", question: "What is an animal you wish you could \"pspspsps\" but should definitely not \"pspspsps\"?" },
-  { number: "131", question: "If you had to pitch your partner like a used car salesperson trying to close a deal, how would you describe them?" },
-  { number: "132", question: "If you could create your dream concert or festival lineup with any four performers—past or present—who would make your must-see list?" },
-  { number: "133", question: "Forget ‘milk and honey'—what biblical scent would make the worst candle?" }
-];
+document.addEventListener('DOMContentLoaded', function () {
+  const lastQuestionButton = document.getElementById('last-question');
+  const nextQuestionButton = document.getElementById('next-question');
+  const number = document.getElementById('number');
+  const question = document.getElementById('question');
+
+  let history = [];
+  let historyIndex = -1;
+  let currentCard = null;
+
+
+  function startNewRound() {
+    const randomIndex = Math.floor(Math.random() * renumberedCards.length);
+    currentCard = renumberedCards[randomIndex];
+
+    number.textContent = "#" + currentCard.number;
+    question.textContent = currentCard.question;
+  }
+
+  // Start game
+  startNewRound();
+
+
+  // Start game
+  function startNewRound() {
+    const randomIndex = Math.floor(Math.random() * renumberedCards.length);
+    currentCard = renumberedCards[randomIndex];
+  
+    // Push new index and update historyIndex
+    history.push(randomIndex);
+    historyIndex = history.length - 1;
+  
+    number.textContent = "Question #" + currentCard.number;
+    question.textContent = currentCard.question;
+  }
+
+  // Previous question
+  lastQuestionButton.addEventListener('click', function (e) {
+    e.preventDefault();
+  
+    if (historyIndex > 0) {
+      historyIndex--;
+      const previousIndex = history[historyIndex];
+      currentCard = renumberedCards[previousIndex];
+  
+      number.textContent = "Question #" + currentCard.number;
+      question.textContent = currentCard.question;
+    }
+  });
+  
+  // Next question
+  nextQuestionButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    startNewRound();
+  });
+});
