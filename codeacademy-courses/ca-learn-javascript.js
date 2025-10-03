@@ -1546,36 +1546,153 @@ const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
 fruits.forEach('I want to eat a' + fruits);
 
 
+//🔸 The .forEach() Method
+
+//example
+groceries.forEach(groceryItem => console.log(groceryItem));
+
+//example
+function printGrocery(element){
+  console.log(element);
+}
+
+groceries.forEach(printGrocery);
 
 
+//exercise
+const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+
+fruits.forEach(function(element){
+  console.log(`I want to eat a ${element}.`)
+})
 
 
+//🔸 The .map() Method
+
+//example
+const numbers = [1, 2, 3, 4, 5]; 
+
+const bigNumbers = numbers.map(number => {
+  return number * 10;
+});
+
+// numbers - an array of numbers.
+// bigNumbers - store the return value of calling .map() on numbers.
+// numbers.map - iterate through each element in the numbers array and pass the element into the callback function.
+// return number * 10 - the code we wish to execute upon each element in the array. This will save each value from the numbers array, multiplied by 10, to a new array.
+
+//example
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
+console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
 
 
+//exercise
+const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+
+// Create the secretMessage array below
+const secretMessage = animals.map(animals => {
+  return animals[0];
+});
+
+console.log(secretMessage.join(''));
+
+const bigNumbers = [100, 200, 300, 400, 500];
+
+// Create the smallNumbers array below
+const smallNumbers = bigNumbers.map(bigNumbers => {
+  return bigNumbers/100;
+});
 
 
+//🔸 The .filter() Method
+
+//example
+const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+
+const shortWords = words.filter(word => {
+  return word.length < 6;
+});
 
 
+//example
+console.log(words); // Output: ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+console.log(shortWords); // Output: ['chair', 'music', 'brick', 'pen', 'door']
 
 
+//exercise
+const randomNumbers = [375, 200, 3.14, 7, 13, 852];
+
+// Call .filter() on randomNumbers below
+const smallNumbers = randomNumbers.filter(randomNumbers => {
+  return randomNumbers < 250;
+});
+
+const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+
+// Call .filter() on favoriteWords below
+const longFavoriteWords = favoriteWords.filter(favoriteWords => {
+  return favoriteWords.length > 7;
+});
 
 
+//🔸 The .findIndex() Method
+
+//example
+const jumbledNums = [123, 25, 78, 5, 9]; 
+
+const lessThanTen = jumbledNums.findIndex(num => {
+  return num < 10;
+});
+
+//example
+console.log(lessThanTen); // Output: 3 
+
+//example
+console.log(jumbledNums[3]); // Output: 5
+
+//example
+const greaterThan1000 = jumbledNums.findIndex(num => {
+  return num > 1000;
+});
+
+console.log(greaterThan1000); // Output: -1
 
 
+//exercise
+const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+
+const foundAnimal = animals.findIndex(animals => {
+  return animals == 'elephant';
+});
+
+const startsWithS = animals.findIndex(animals => {
+  return animals.startsWith('s');
+});
 
 
+//🔸 The .reduce() Method
+
+//example
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+})
+
+console.log(summedNums) // Output: 17
+
+//example
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+}, 100)  // <- Second argument for .reduce()
+
+console.log(summedNums); // Output: 117
 
 
-
-
-
-
-
-
-
-
-
-
+//exercise
+const newNumbers = [1, 3, 5, 7];
 
 
 
