@@ -1,30 +1,33 @@
 const cards = [
+  // Common (1–2)
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Fossiliferous_limestone_%28Gravel_Point_Formation%2C_Middle_Devonian%3B_near_South_Point%2C_west_of_Charlevoix%2C_Michigan%2C_USA%29_8.jpg",
     number: "#1",
     name: "Limestone",
     rockType: "Sedimentary",
     rockFact: "Formed from shells and marine organisms.",
     chancePercentage: 0.20,
-    rarityLevel: "Common"
+    rarityLevel: "Common",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Bianco_Sardo_Granit_mit_polierter_Oberfl%C3%A4che.jpg/960px-Bianco_Sardo_Granit_mit_polierter_Oberfl%C3%A4che.jpg",
     number: "#2",
     name: "Granite",
     rockType: "Igneous",
     rockFact: "Coarse-grained rock used in buildings and sculptures.",
     chancePercentage: 0.15,
-    rarityLevel: "Common"
+    rarityLevel: "Common",
   },
+
+  // Uncommon (3–6)
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Slate_%28Knife_Lake_Formation%2C_metamorphism_at_2.7_Ga%2C_Neoarchean%3B_Rt._135_roadcut%2C_Gilbert%2C_Minnesota%2C_USA%29_3_%2823140002749%29.jpg/500px-Slate_%28Knife_Lake_Formation%2C_metamorphism_at_2.7_Ga%2C_Neoarchean%3B_Rt._135_roadcut%2C_Gilbert%2C_Minnesota%2C_USA%29_3_%2823140002749%29.jpg",
     number: "#3",
     name: "Slate",
     rockType: "Metamorphic",
     rockFact: "Splits into smooth sheets; used for tiles and chalkboards.",
     chancePercentage: 0.12,
-    rarityLevel: "Uncommon"
+    rarityLevel: "Uncommon",
   },
   {
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
@@ -33,150 +36,158 @@ const cards = [
     rockType: "Igneous",
     rockFact: "Volcanic glass used by early humans for sharp tools.",
     chancePercentage: 0.12,
-    rarityLevel: "Uncommon"
+    rarityLevel: "Uncommon",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Marmo_z17.JPG/500px-Marmo_z17.jpg",
     number: "#5",
     name: "Marble",
     rockType: "Metamorphic",
     rockFact: "Formed from limestone; valued for sculpture.",
     chancePercentage: 0.10,
-    rarityLevel: "Uncommon"
+    rarityLevel: "Uncommon",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Teidepumice.jpg",
     number: "#6",
+    name: "Pumice",
+    rockType: "Igneous",
+    rockFact: "Formed from frothy lava that cools quickly, full of air holes so it can float on water.",
+    chancePercentage: 0.10,
+    rarityLevel: "Uncommon",
+  },
+
+  // Rare (7–12)
+  {
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/USDA_Mineral_Sandstone_93c3955.jpg/500px-USDA_Mineral_Sandstone_93c3955.jpg",
+    number: "#7",
     name: "Sandstone",
     rockType: "Sedimentary",
     rockFact: "Made from compacted sand grains.",
     chancePercentage: 0.09,
-    rarityLevel: "Rare"
+    rarityLevel: "Rare",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#7",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Quartz_Br%C3%A9sil.jpg/500px-Quartz_Br%C3%A9sil.jpg",
+    number: "#8",
     name: "Quartz",
-    rockType: "Igneous",
+    rockType: "Igneous / Mineral",
     rockFact: "Used in jewelry and electronics.",
     chancePercentage: 0.08,
-    rarityLevel: "Rare"
+    rarityLevel: "Rare",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#8",
-    name: "Gneiss",
-    rockType: "Metamorphic",
-    rockFact: "Banded rock formed under extreme pressure.",
-    chancePercentage: 0.06,
-    rarityLevel: "Epic"
-  },
-  {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Basalt_12_%2848674276333%29.jpg/500px-Basalt_12_%2848674276333%29.jpg",
     number: "#9",
-    name: "Peridotite",
-    rockType: "Igneous",
-    rockFact: "Dense mantle rock often rich in olivine.",
-    chancePercentage: 0.05,
-    rarityLevel: "Epic"
-  },
-  {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#10",
-    name: "Bauxite",
-    rockType: "Sedimentary",
-    rockFact: "Primary source of aluminum.",
-    chancePercentage: 0.03,
-    rarityLevel: "Legendary"
-  },
-  {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#11",
-    name: "Coal",
-    rockType: "Sedimentary",
-    rockFact: "Formed from plant remains under high pressure over millions of years.",
-    chancePercentage: 0.025,
-    rarityLevel: "Mythic"
-  },
-  {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#12",
     name: "Basalt",
     rockType: "Igneous",
-    rockFact: "Dark volcanic rock common in the Earth’s crust.",
+    rockFact: "Dark volcanic rock common in the Earth's crust.",
     chancePercentage: 0.08,
-    rarityLevel: "Rare"
+    rarityLevel: "Rare",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#13",
-    name: "Dolomite",
-    rockType: "Sedimentary / Metamorphic",
-    rockFact: "Contains calcium magnesium carbonate; can form in caves as stalactites.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mammoth_Terraces.jpg/960px-Mammoth_Terraces.jpg",
+    number: "#10",
+    name: "Travertine",
+    rockType: "Sedimentary",
+    rockFact: "Formed by mineral deposits from hot springs or limestone caves, often used in architecture.",
     chancePercentage: 0.07,
-    rarityLevel: "Rare"
+    rarityLevel: "Rare",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#14",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Shale_formation%2C_Marble_Canyon%2C_Kootenay_National_Park%2C_British_Columbia%2C_2025-07-11.jpg/500px-Shale_formation%2C_Marble_Canyon%2C_Kootenay_National_Park%2C_British_Columbia%2C_2025-07-11.jpg",
+    number: "#11",
     name: "Shale",
     rockType: "Sedimentary",
     rockFact: "Fine-grained rock formed from compacted mud and clay.",
     chancePercentage: 0.09,
-    rarityLevel: "Rare"
+    rarityLevel: "Rare",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#15",
-    name: "Feldspar",
-    rockType: "Igneous",
-    rockFact: "One of the most abundant minerals in the Earth’s crust.",
-    chancePercentage: 0.10,
-    rarityLevel: "Uncommon"
-  },
-  {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#16",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Mica_%286911818878%29.jpg/960px-Mica_%286911818878%29.jpg",
+    number: "#12",
     name: "Mica",
     rockType: "Metamorphic / Igneous",
     rockFact: "Splits easily into thin sheets; used in electronics.",
     chancePercentage: 0.06,
-    rarityLevel: "Rare"
+    rarityLevel: "Rare",
+  },
+
+  // Epic (13–16)
+  {
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Gneiss.jpg/500px-Gneiss.jpg",
+    number: "#13",
+    name: "Gneiss",
+    rockType: "Metamorphic",
+    rockFact: "Banded rock formed under extreme pressure.",
+    chancePercentage: 0.06,
+    rarityLevel: "Epic",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#17",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Peridotite_mantle_xenoliths_in_phonotephrite_%28Peridot_Mesa_Flow%2C_Middle_Pleistocene%2C_580_ka%3B_Peridot_Mesa%2C_San_Carlos_Volcanic_Field%2C_Arizona%2C_USA%29_28_%28cropped%29%29.jpg/960px-thumbnail.jpg",
+    number: "#14",
+    name: "Peridotite",
+    rockType: "Igneous",
+    rockFact: "Dense mantle rock often rich in olivine.",
+    chancePercentage: 0.05,
+    rarityLevel: "Epic",
+  },
+  {
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Quartzite_Solli%C3%A8res.jpg/500px-Quartzite_Solli%C3%A8res.jpg",
+    number: "#15",
     name: "Quartzite",
     rockType: "Metamorphic",
     rockFact: "Formed when sandstone is subjected to heat and pressure.",
     chancePercentage: 0.05,
-    rarityLevel: "Epic"
+    rarityLevel: "Epic",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#18",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/1gabbro.jpg/500px-1gabbro.jpg",
+    number: "#16",
     name: "Gabbro",
     rockType: "Igneous",
     rockFact: "Intrusive rock, coarse-grained, from slow cooling magma.",
     chancePercentage: 0.05,
-    rarityLevel: "Epic"
+    rarityLevel: "Epic",
+  },
+
+  // Legendary (17–19)
+  {
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bauxite_with_unweathered_rock_core._C_021.jpg/500px-Bauxite_with_unweathered_rock_core._C_021.jpg",
+    number: "#17",
+    name: "Bauxite",
+    rockType: "Sedimentary",
+    rockFact: "Primary source of aluminum.",
+    chancePercentage: 0.03,
+    rarityLevel: "Legendary",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#19",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1c/ChertUSGOV.jpg",
+    number: "#18",
     name: "Chert",
     rockType: "Sedimentary",
     rockFact: "Hard, fine-grained rock composed of microcrystalline quartz.",
     chancePercentage: 0.04,
-    rarityLevel: "Legendary"
+    rarityLevel: "Legendary",
   },
   {
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Lipari-Obsidienne_%285%29.jpg/500px-Lipari-Obsidienne_%285%29.jpg",
-    number: "#20",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/69/Cassiterite.jpg",
+    number: "#19",
     name: "Cassiterite",
     rockType: "Tin oxide mineral",
     rockFact: "The primary ore of tin.",
     chancePercentage: 0.03,
-    rarityLevel: "Legendary"
+    rarityLevel: "Legendary",
+  },
+
+  // Mythic (20)
+  {
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Bituminous_Coal.JPG/960px-Bituminous_Coal.jpg",
+    number: "#20",
+    name: "Coal",
+    rockType: "Sedimentary",
+    rockFact: "Formed from plant remains under high pressure over millions of years.",
+    chancePercentage: 0.025,
+    rarityLevel: "Mythic",
   }
 ];
