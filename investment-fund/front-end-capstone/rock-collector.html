@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Collector</title>
+
+<link rel="stylesheet" href="rock-collector.css">
+
+</head>
+
+
+<body>
+<nav class="navbar">
+    <a href="../../index.html" class="logo">KW Coding</a>
+
+    <div class="menu" id="menu">
+        <a href="../../projects.html">Projects</a>
+    </div>
+</nav>
+
+
+
+<div class="banner" style="background-color:#c5cdef;">
+    <h1>Rock Collector</h1>
+    <p>Explore the caves and uncover hidden rock cards. Can you find all 20?</p>
+</div>
+
+<div style="padding: 40px 0 0 0">&nbsp;</div>
+
+<div id="game">
+    <div id="discovered-preview" style="text-align: center;"></div>
+
+    <p>&nbsp;</p>
+
+    <button id="mine">Mine for Rocks</button>
+
+    <p><a href="#" id="reset-game">Reset Game Progress</a></p>
+
+  </div>
+
+<div style="padding: 10px 0">&nbsp;</div>
+
+<div style="width: 50%; margin: 0 auto;">
+  <h2>How to Play</h2>
+<ol>
+  <li>Click Mine for Rocks to dig up a card.</li>
+  <li>Each card reveals a unique rock with facts and details.</li>
+  <li>Your goal is to collect all 10 unique rock cards.</li>
+  <li>If you find a duplicate, keep trying — they're randomly chosen!</li>
+  <li>Click Reset Progress to start fresh.</li>
+</ol>
+
+</div>
+
+<div style="padding: 40px 0">
+  &nbsp;
+</div>
+
+<hr>
+
+<div style="padding: 20px 0">
+  &nbsp;
+</div>
+
+<div style="width: 50%; margin: 0 auto;">
+  <h2>Your Rock Collection</h2>
+  <p id="collection-count" style="text-align: center;">0 out of 10 rocks found</p>
+  
+  <div style="padding: 10px 0">
+    &nbsp;
+  </div>
+</div>
+
+<div class="rock-row"></div>
+
+<div style="padding: 40px 0">
+    &nbsp;
+</div>
+
+<!-- Rock Info Modal -->
+<div id="rock-modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close" id="close-modal">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+
+
+
+<script src="rock-collector.js"></script>
+<script src="rock-collector-cards.js"></script>
+</body>
+</html>
+
