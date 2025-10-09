@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mumble Jumble</title>
+
+<link rel="stylesheet" href="mumble-jumble.css">
+
+</head>
+
+
+<body>
+<nav class="navbar">
+    <a href="index.html" class="logo">KW Coding</a>
+
+    <div class="menu" id="menu">
+        <a href="projects.html">Projects</a>
+    </div>
+</nav>
+
+
+<div class="banner" style="background-color:#c5cdef;">
+    <h1>Mumble Jumble</h1>
+    <p>Translate the gibberish phrases into ones that make sense.</p>
+</div>
+
+<div style="padding: 10px 0 0 0">&nbsp;</div>
+
+
+<div id="game">  
+  <br><br>
+  <p id="gibberish-phrase" style="font-weight: bold; font-size: 30px; text-align: center;"></p>
+  <br><br>
+  <input type="text" id="user-answer" placeholder="Type your guess here" style="width: 200px; height: 30px;"/> <a href="#" id="show-hide-hint" style="color: #000;">Show Hint</a>
+  <br><br>
+  <span id="hint-text" style="font-style: italic;">&nbsp;</span>
+ <br>
+  <button id="submit-answer">Guess Phrase</button>
+  <button id="give-up">Reveal Answer</button>
+  <br><br>
+  <p id="message" style="text-align: center; font-weight: bold;"></p>
+  <a href="#" id="next-phrase" style="display: block; text-align: center; margin-top: 20px;color: #000;">Next Phrase ></a>
+
+</div>
+
+<div style="padding: 10px 0">&nbsp;</div>
+
+<div style="width: 50%; margin: 0 auto;">
+  <h2>How to Play</h2>
+  <ol style="text-align: left; text-decoration: none;">
+    <li style="padding-top: 8px">Read the gibberish phrase out loud and try to guess what real phrase it sounds like.</li>
+    <li style="padding-top: 8px">Stuck? Click “Show Hint” for a helpful clue.</li>
+    <li style="padding-top: 8px">Type your guess in the input box and click “Submit Answer.”</li>
+    <li style="padding-top: 8px">If your guess is correct, you'll see “Correct!” and the “Skip” button becomes “Next Phrase.” If it's wrong, you'll see “Try&nbsp;Again”.</li>
+    <li style="padding-top: 8px">Click “Next Phrase” or “Skip” to load a new card.</li>
+    <li style="padding-top: 8px">Keep going and enjoy the game for as long as you like!</li>
+  </ol>
+</div>
+
+<div style="padding: 40px 0">
+    &nbsp;
+</div>
+
+
+
+<script src="mumble-jumble-cards.js"></script>
+<script src="mumble-jumble.js"></script>
+</body>
+</html>
+
