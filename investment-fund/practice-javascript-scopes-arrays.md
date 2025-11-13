@@ -107,64 +107,147 @@ Once you have your prediction, test it by running the snippet!
 
 ⭕️ Answer:
 <!-- 
-**this isn't correct. ask jacob to explain
 A: 100 
 B: 50 
 C: 25 
-D: 25 
-E: 25 
-F: 25
+D: 50
+E: 100 
+F: 100
 -->
 
 ### Exercise 4: Function Parameter Shadowing
 
 ```javascript
-var message = "Global message";
+var message = "Global message"; 
+// global scope
 
-function processMessage(message) {
-    console.log("1:", message);
-    
+function processMessage(message) { 
+// 'message' is now "Parameter message" (shadows global)
+    console.log("1:", message); 
+    // logs "1: Parameter message"
+
     function formatMessage() {
+    // declares a new local 'message'
+    // "Formatted: " + message → uses the outer (parameter) value
         var message = "Formatted: " + message;
-        console.log("2:", message);
+        console.log("2:", message); 
+        // logs "2: Formatted: Parameter message"
         return message;
     }
-    
-    console.log("3:", message);
-    formatMessage();
-    console.log("4:", message);
+
+    console.log("3:", message); 
+    // still using parameter → logs "3: Parameter message"
+    formatMessage();            
+    // runs and logs inside formatMessage
+    console.log("4:", message); 
+    // still parameter → logs "4: Parameter message"
 }
 
-processMessage("Parameter message");
-console.log("5:", message);
+processMessage("Parameter message"); 
+// run function with parameter
+console.log("5:", message); 
+// global scope again → logs "5: Global message" because this is now outside the function
+
 ```
 
 Predict what gets logged, and explain why.
 
 Once you have your prediction, test it by running the snippet!
 
+⭕️ Answer:
+<!-- 
+1: Parameter message
+2: Formatted: Parameter message
+3: Parameter message
+4: Parameter message
+5: Global message
+-->
+
+
 ### Exercise 5: Loop Variable Shadowing
 
-```javascript
+```javascript 1
 var counter = "global";
+// global variable
 
 function runLoop() {
+// 'var counter' is hoisted to the top of this function
+// It creates a new local variable named 'counter', shadowing the global one
+// At this point, local 'counter' is undefined
+
     console.log("Before loop:", counter);
+    // Logs: undefined (local 'counter' exists, but hasn't been assigned yet)
     
     for (var counter = 0; counter < 3; counter++) {
+    // Sets local 'counter' to 0, increments up to 2
         console.log("In loop:", counter);
+        // Logs: 0, 1, 2
     }
     
     console.log("After loop:", counter);
+    // After loop, local 'counter' is 3
+    // Logs: 3
 }
 
 runLoop();
 console.log("Final:", counter);
+// Outside the function, uses the global 'counter' = "global"
+// Logs: "global"
+```
+
+```javascript 2
+var counter = "global";
+//variable is "global"
+
+function runLoop() {
+//this function is populated but stored until it's called on in runLoop();
+
+    console.log("Before loop:", counter);
+    //Before loop: global
+
+    for (var counter = 0; counter < 3; counter++) {
+
+        console.log("In loop:", counter);
+        //In loop: 0
+        //In loop: 1
+        //In loop: 2
+    }
+    
+    console.log("After loop:", counter);
+    // After loop: 3
+    //this is the same as the last loop number since that's the new variable.
+}
+
+runLoop();
+//this runs the prevoius function which outputs
+console.log("Final:", counter);
+//this wouldn't be 3 since the stored function is now empty.
+//output goes back to var counter = "global"; so   "Final: global" 
 ```
 
 Predict what gets logged, and explain why.
 
 Once you have your prediction, test it by running the snippet!
+
+⭕️ Answer:
+<!-- 
+Before loop: undefined 
+// local counter declared, but not initialized yet
+In loop: 0
+In loop: 1
+In loop: 2
+After loop: 3 
+// loop finishes with local counter = 3
+Final: global 
+// back in global scope — untouched by runLoop
+-->
+
+💡
+<!-- 
+I'm coding with the assumption that every problem needs an answer, but not considering "undefined" as an answer.
+I'm still stuck to linear thinking. I haven't grasped when the code holds a later answer or requests to start from the top again.
+-->
+
 
 ### Exercise 6: Button Event Listeners
 

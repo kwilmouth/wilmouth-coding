@@ -1693,13 +1693,60 @@ console.log(summedNums); // Output: 117
 
 //exercise
 const newNumbers = [1, 3, 5, 7];
+const newSum = [];
+
+const newSum = newNumbers.reduce(function(accumulator, currentValue){
+const newSum = newNumbers.reduce((accumulator, currentValue) => {
+  console.log('The value of accumulator: ', accumulator);
+console.log('The value of currentValue: ', currentValue);
+
+  return accumulator + currentValue
+})
+
+}, 10)
+
+console.log(newSum)
+
+
+//🔸 The .reduce() Method
+
+// The documentation for each method contains several sections:
+// - a short definition
+// - a block with the correct syntax for using the method
+// - a list of parameters the method accepts or requires
+// - the return value of the function
+// - an extended description
+// - examples of the method's use
+// - other additional information
+
+
+//exercise
+const words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+const interestingWords = [];
+  
+words.some((word) => {
+  return word.length < 6;
+});
+
+console.log(words.some(() => {
+  return word.length < 6;
+}));
+
+const interestingWords = words.filter((word) => {
+  return word.length > 6;
+});
+
+console.log(interestingWords.some(() => {
+  return word.length < 6;
+}));
+
+  // Use filter to create a new array
 
 
 
+  // Make sure to uncomment the code below and fix the incorrect code before running it
 
-
-
-
+  // console.log(interestingWords.every((word) => { } ));
 
 
 
