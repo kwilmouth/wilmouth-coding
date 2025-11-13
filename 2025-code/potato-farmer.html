@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potato Farmer</title>
+
+<link rel="stylesheet" href="potato-farmer.css">
+
+</head>
+
+
+<body>
+<nav class="navbar">
+    <a href="../index.html" class="logo">KW Coding</a>
+
+    <div class="menu" id="menu">
+        <a href="../projects.html">Projects</a>
+    </div>
+</nav>
+
+
+<div class="banner" style="background-color:#c5cdef;">
+    <h1>Potato Farmer</h1>
+    <p>Grow and sell the most potatoes before the 12&#8209;week season ends.</p>
+</div>
+
+<div style="padding: 10px 0 0 0">&nbsp;</div>
+
+<div id="game">
+    <h2><strong>Week <span id="week-counter">0</span> of 12</strong> </h2>
+
+    <p id="message" style="text-align: center;"></p>
+    <p>&nbsp;</p>
+
+    <button id="grow">Grow 🥔</button>
+    <button id="sell">Sell 💰</button>
+    <button id="buy">Buy 🌱</button>
+    <button id="new-game" style="display: none;">New Game</button>
+    <p>&nbsp;</p>
+    <p style="text-align: center;"><strong>🌱 Unplanted Seeds:</strong> <span id="unplanted-seeds">0</span> seeds | <strong>🥔 Farmed Potatoes:</strong> <span id="farmed-potatoes">0</span> potatoes | <strong>💰 Currency:</strong> <span id="currency">0</span> coins</p>
+
+    <p>&nbsp;</p>
+    <p><strong>🥔 Season's Harvest:</strong> <span id="seasons-harvest">0</span> potatoes</p>
+    <p><strong>🏆 High Score:</strong> <span id="high-score">0</span> potatoes</p>
+    <p>&nbsp;</p>
+    <p><a href="#" id="reset-score" style="font-size: 0.9em; color: #000;">Reset High Score</a></p>
+
+  </div>
+
+<div style="padding: 10px 0">&nbsp;</div>
+
+<div style="width: 50%; margin: 0 auto;">
+  <h2>How to Play</h2>
+  <ol style="text-align: left; text-decoration: none;">
+    <li style="padding-top: 8px">Take turns growing, selling, or buying potatoes each week.</li>
+    <ul>
+      <li style="padding-top: 8px;"><strong>Grow.</strong> Potatoes take a week to grow from seeds to full potatoes. Test you luck with earning either a bountiful harvest or a withered one.
+      </li>
+      <li style="padding-top: 8px"><strong>Sell.</strong> Sell all your potatoes for more coins. This will allow you to buy seeds to earn more at the end of the season.
+      </li>
+      <li style="padding-top: 8px"><strong>Buy.</strong>  Buy the max amount of seeds that your coins will allow and keep planting.
+      </li>
+    </ul>
+    <li style="padding-top: 8px">Grow the most potatoes to win.</li>
+  </ol>
+</div>
+
+
+<div style="padding: 40px 0">
+    &nbsp;
+</div>
+
+
+
+<script src="potato-farmer.js"></script>
+</body>
+</html>
+

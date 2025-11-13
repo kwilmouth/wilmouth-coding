@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bingo Buddy</title>
+
+<link rel="stylesheet" href="bingo-buddy.css">
+
+</head>
+
+
+<body>
+<nav class="navbar">
+    <a href="../index.html" class="logo">KW Coding</a>
+
+    <div class="menu" id="menu">
+        <a href="../projects.html">Projects</a>
+    </div>
+</nav>
+
+
+<div class="banner" style="background-color:#c5cdef;">
+    <h1>Bingo Buddy</h1>
+    <p>Call out random bingo numbers and keep the game moving with a simple, no-fuss number generator for 75-ball bingo games.</p>
+</div>
+
+<div style="padding: 10px 0 0 0">&nbsp;</div>
+
+<div id="bingo-game-board">
+
+<div id="message-display" style="margin: 15px 0; font-weight: bold; color: red;"></div>
+
+<div id="call-display">
+  <div style="padding-bottom: 5px"><strong>Current:</strong> <span id="current-call">--</span></div>
+  <div><strong>Last:</strong> <span id="last-call">--</span></div>
+</div>
+
+<div style="margin-top: 20px; display: flex; gap: 50px; justify-content: center;">
+  <button id="reset-btn">New Game</button>
+  <button id="next-btn">Call the Next Number</button>
+</div>
+
+<div style="padding: 10px 0">&nbsp;</div>
+
+<div id="bingo-grid"></div>
+
+</div>
+
+<div style="padding: 10px 0">&nbsp;</div>
+
+<div style="width: 50%; margin: 0 auto;">
+  <h2>How to Play</h2>
+  <ol style="text-align: left; text-decoration: none;">
+    <li style="padding-top: 8px"><strong>Call the Numbers.</strong> 
+        <br>Click the "Call the Next Number" button to reveal a random call from the standard 75-ball bingo set (B1 to O75). Each number is unique and will only be called once per game.</li>
+    <li style="padding-top: 8px"><strong>Track Calls.</strong> 
+        <br>As each number is called, it will be highlighted in the master grid so you can easily keep track of what’s already been announced.</li>
+    <li style="padding-top: 8px"><strong>Start Fresh</strong> 
+        <br>Click “New Game” to reset the board and begin a brand new round when you're ready to start again.</li>
+  </ol>
+</div>
+  
+
+  
+
+  
+
+  
+
+  
+
+<div style="padding: 40px 0">
+    &nbsp;
+</div>
+
+
+
+<script src="bingo-buddy.js"></script>
+</body>
+</html>
+
