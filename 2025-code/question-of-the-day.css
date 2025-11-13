@@ -28,11 +28,15 @@ button {
 }
 
 .question-box {
-    width: 550px;
-    height: 250px;
+    width: 100%;
+    max-width: 550px;
+    height: auto;
     margin: 0 auto;
+    padding: 20px;
     overflow-y: auto;
+    box-sizing: border-box;
   }
+  
   
 
 
