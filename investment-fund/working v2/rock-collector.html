@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Collector</title>
+
+<link rel="stylesheet" href="rock-collector.css">
+
+</head>
+
+
+<body>
+<nav class="navbar">
+    <a href="../../index.html" class="logo">KW Coding</a>
+
+    <div class="menu" id="menu">
+        <a href="../../projects.html">Projects</a>
+    </div>
+</nav>
+
+
+
+<div class="banner" style="background-color:#c5cdef;">
+    <h1>Rock Collector v2</h1>
+    <p id="explore">Explore the caves and uncover hidden rock cards. Can you find all 20?</p>
+</div>
+
+<!-- game container -->
+<div style="padding: 40px 0 0 0">&nbsp;</div>
+
+<div class="game">
+    <div id="discovered-preview" style="text-align: center;"></div>
+
+    <p>&nbsp;</p>
+
+    <button id="mine" style="width: 40%; padding: 15px 0;">Mine for Rocks <br><span style="font-size: 11px;">Requires 5 Energy</span></button>
+    <p style="text-align: center; padding-top: 50px;"><a href="#" id="reset-game">Reset Game Progress</a></p>
+</div>
+
+
+<div style="margin:40px auto; width: 70%; display: flex; gap: 40px;">&nbsp;
+  
+  <div style="">
+    <h2 style="text-align: left;" id="energy-points">Energy Points: XX</h2>
+    <br><br>
+    <h2 style="text-align: left;">How to Play</h2>
+      <ol style="padding-left: 30px;">
+        <li>Click Mine for Rocks to dig up a card.</li>
+        <li>Each card reveals a unique rock with facts and details.</li>
+        <li>Your goal is to collect all 20 unique rock cards.</li>
+        <li>If you find a duplicate, keep trying - they're randomly chosen!</li>
+        <li>Click Reset Progress to start fresh.</li>
+      </ol>
+  </div>
+
+  <div>
+    <h2 style="text-align: left;">Card Values:</h2>
+
+    <table style="white-space: nowrap;">
+      <tr>
+        <td style="color: #9e9e9e;">Common</td>
+        <td>&nbsp;</td>
+        <td>1 Energy Point</td>
+      </tr>
+      <tr>
+        <td style="color: #4caf50;">Uncommon</td>
+        <td>&nbsp;</td>
+        <td>3 Energy Points</td>
+      </tr>
+      <tr>
+        <td style="color: #2196f3;">Rare</td>
+        <td>&nbsp;</td>
+        <td>6 Energy Points</td>
+      </tr>
+      <tr>
+        <td style="color: #9c27b0;">Epic</td>
+        <td>&nbsp;</td>
+        <td>10 Energy Points</td>
+      </tr>
+      <tr>
+        <td style="color: #ff9800;">Legendary</td>
+        <td>&nbsp;</td>
+        <td>15 Energy Point</td>
+      </tr>
+      <tr>
+        <td style="color: #f44336;">Mythic</td>
+        <td>&nbsp;</td>
+        <td>25 Energy Points</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<div style="padding: 20px 0">
+  &nbsp;
+</div>
+
+<hr>
+
+<div style="padding: 20px 0">
+  &nbsp;
+</div>
+
+<div style="width: 50%; margin: 0 auto; ">
+  <h2>Your Rock Collection</h2>
+  <p id="collection-count" style="text-align: center;">0 out of 10 rocks found</p>
+  <p id="collection-value" style="text-align: center;">0 total cards pulled, worth 0 energy points</p>
+
+  <div style="padding: 10px 0">
+    &nbsp;
+  </div>
+</div>
+
+<div class="rock-row"></div>
+
+<div style="padding: 40px 0">
+    &nbsp;
+</div>
+
+<!-- Rock Info Modal -->
+<div id="rock-modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="close-modal" class="close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+
+  
+
+</div>
+
+<div class="game-controls">
+  <button id="sell-duplicates">Sell Duplicate Cards</button>
+
+  <div id="duplicate-list" style="margin-top: 20px;">
+    <h3>Duplicate Cards</h3>
+    <ul id="duplicate-items" style="padding-left: 20px;"></ul>
+  </div>
+</div>
+
+
+
+
+<script src="rock-collector-mine-rocks.js"></script>
+<script src="rock-collector-total-collection.js"></script>
+<script src="rock-collector-cards.js"></script>
+</body>
+</html>
