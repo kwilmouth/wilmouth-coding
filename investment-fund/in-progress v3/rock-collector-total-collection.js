@@ -1,0 +1,102 @@
+//Bottom of Game - Collected Rocks
+
+function renderCollection(discovered, cards, cardCounts) {
+  const container = document.querySelector(".rock-row");
+  container.innerHTML = ""; // Clear previous
+
+  cards.forEach(card => {
+    const isDiscovered = discovered.includes(card.number);
+
+    const cardHTML = isDiscovered
+      ? `
+        <a href="#" class="rock-preview" data-number="${card.number}">
+          <div class="rock-cards">
+            <div class="name rock-name">
+              ${card.number}&nbsp;&nbsp;&nbsp;&nbsp;${card.name}
+            </div>
+            <br><br>
+            <img src="${card.imageUrl}" alt="${card.name}" class="rock-image" />
+          </div>
+        </a>
+      `
+      : `
+        <div class="rock-cards undiscovered">
+          <div class="name"><br><br> ???</div>
+        </div>
+      `;
+
+    container.insertAdjacentHTML("beforeend", cardHTML);
+  });
+
+  // Update duplicate list
+  const duplicateList = document.getElementById("duplicate-items");
+  duplicateList.innerHTML = "";
+
+  for (const number in cardCounts) {
+    const count = cardCounts[number];
+    if (count > 1) {
+      const card = cards.find(c => c.number === number);
+      const li = document.createElement("li");
+      li.textContent = `${card.number} ${card.name} ×${count - 1}`;
+      duplicateList.appendChild(li);
+    }
+  }
+
+  // Toggle visibility of duplicate section
+  const duplicateSection = document.getElementById("duplicate-list");
+  duplicateSection.style.display = duplicateList.children.length > 0 ? "block" : "none";
+
+  // Update counter text
+  const countDisplay = document.getElementById("collection-count");
+  countDisplay.textContent = `${discovered.length} out of ${cards.length} rocks found`;
+
+  // Attach click event to each discovered rock card for popup
+  document.querySelectorAll(".rock-preview").forEach(preview => {
+    preview.addEventListener("click", function (e) {
+      e.preventDefault();
+      const cardNumber = this.dataset.number;
+      const card = cards.find(c => c.number === cardNumber);
+      showRockModal(card);
+    });
+  });
+}
+
+  
+  function showRockModal(card) {
+    const modal = document.getElementById("rock-modal");
+    const modalBody = document.getElementById("modal-body");
+  
+    modalBody.innerHTML = `
+      <div class="rock-cards found-rock">
+        <div class="name rock-name" style="font-family:24px;">${card.number}&nbsp;&nbsp;&nbsp;&nbsp;${card.name}</div>
+          <br>
+          <img src="${card.imageUrl}" alt="${card.name}" class="rock-image" />
+          <div class="rock-details">
+          <div class="rockType"><strong>Type:</strong> ${card.rockType}</div>
+          <div class="rockFact"><strong>Rock Fact:</strong> ${card.rockFact}</div>
+          <div class="rarityLevel rarity-${card.rarityLevel.toLowerCase()}">${card.rarityLevel}</div>
+          </div>      
+        </div>
+    `;
+  
+    modal.classList.remove("hidden");
+  
+    // Close modal on (x) click
+    document.getElementById("close-modal").addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+  }
+  
+    // Close modal on outside click or Esc
+    document.addEventListener("click", function (e) {
+      if (e.target.id === "rock-modal") {
+        document.getElementById("rock-modal").classList.add("hidden");
+      }
+    });
+  
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.getElementById("rock-modal").classList.add("hidden");
+    }
+ 
+  });
