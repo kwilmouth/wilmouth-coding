@@ -30,7 +30,7 @@ function updateCollectionValue(cardCounts, cards) {
   const cardLabel = duplicateCardsPulled === 1 ? "duplicate card" : "duplicate cards";
   const pointLabel = duplicateEnergyWorth === 1 ? "energy point" : "energy points";
 
-  valueDisplay.textContent =  `${duplicateCardsPulled} ${cardLabel} pulled, worth ${duplicateEnergyWorth} ${pointLabel}`;
+  valueDisplay.textContent =  `${duplicateCardsPulled} ${cardLabel} available, worth ${duplicateEnergyWorth} ${pointLabel}`;
 }
 
 
