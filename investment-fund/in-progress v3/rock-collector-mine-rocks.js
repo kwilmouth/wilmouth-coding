@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showDefaultMessage() {
     const container = document.getElementById("discovered-preview");
-    container.innerHTML = `<p style="text-align: center; font-weight: bold; font-size: 24px; color: #333; margin-bottom: 8px;">Explore the caves and uncover hidden rock cards. <br>Can you find all 20?</p>`;
+    container.innerHTML = `<p style="text-align: center; font-weight: bold; font-size: 24px; color: #333; margin-bottom: 8px;">Explore the cave and uncover hidden rock cards. <br>Can you find all 20?</p>`;
   }
 
   function showDiscoveredRock(card, isNew) {
