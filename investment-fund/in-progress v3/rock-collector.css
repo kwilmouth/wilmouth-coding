@@ -50,12 +50,13 @@ button {
 
 /* All Rock Cards */
 .rock-row {
-    margin: 0 auto;
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(5, 1fr); /* 4 columns on desktop */
-    gap: 20px; /* Space between columns and rows */
-    padding: 20px 20px 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px 20px 20px 40px;
 }
+
+
 /* Individual Project Card */
 .rock-cards {
     display: flex;
@@ -332,7 +333,7 @@ p {
 
 .two-column-section {
     display: flex;
-    flex-wrap: wrap; /* Stack columns on mobile */
+    flex-wrap: wrap; 
     gap: 20px;
     padding: 20px;
 }
@@ -368,24 +369,24 @@ p {
 /* Two-Column Section start */
 .two-column-section {
     display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping to a new row */
+    flex-wrap: wrap;  
     justify-content: space-between;
     align-items: center; 
     width: 100%;
     padding: 40px;
-    background-color: #c5cdef; /* Moved from inline style */
-    gap: 20px; /* Added more space between columns */
+    background-color: #c5cdef;  
+    gap: 20px; 
 }
 
 .column {
-    flex: 1; /* Ensures equal width */
-    max-width: 50%; /* Ensures two equal columns */
-    min-width: 300px; /* Prevents columns from becoming too small */
+    flex: 1;  
+    max-width: 50%;  
+    min-width: 300px;  
     padding: 0 40px;
     overflow: hidden; 
     word-wrap: break-word; 
     text-align: justify; 
-    box-sizing: border-box; /* Prevents padding from affecting width */
+    box-sizing: border-box;  
 }
 /* Two-Column Section end*/
 
@@ -447,8 +448,10 @@ p {
 }
 
 .banner p {
-    text-align: center;
-    padding: 0 100px;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 
